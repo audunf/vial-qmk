@@ -69,3 +69,28 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     return true;
 }
+
+
+#if 1
+
+#define _CAPS_COLOR_RGB 254, 1, 1
+
+/**
+ * AF: Switch on RGB LEDS when CAPS lock is on
+ */
+static void set_rgb_capslock_leds(uint8_t r, uint8_t g, uint8_t b) {
+    for (uint8_t i = 0; i < 86; ++i) { // see 'iso.c' - skip lights on side og keyboard
+        rgb_matrix_set_color(i, r, g, b);
+    }
+}
+
+void rgb_matrix_indicators_user(void) {
+    if (host_keyboard_led_state().caps_lock) {
+       //rgb_matrix_set_color(3, _CAPS_COLOR_RGB); // see 'iso.c' - 3 is CAPS_LOCK
+       set_rgb_capslock_leds(_CAPS_COLOR_RGB);
+    } else if (host_keyboard_led_state().caps_lock) {
+        //rgb_matrix_set_color(3, RGB_OFF); // see 'iso.c' - 3 is CAPS_LOCK
+       set_rgb_capslock_leds(RGB_OFF);
+    }
+}
+#endif
