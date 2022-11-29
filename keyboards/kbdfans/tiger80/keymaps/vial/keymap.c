@@ -16,6 +16,14 @@
 
 #include QMK_KEYBOARD_H
 
+#include "stdint.h"
+
+
+enum custom_keycodes {
+    B_LT = USER00,
+    B_GT = USER01
+};
+
 enum layers {
     _LAYER0,
     _LAYER1,
@@ -24,7 +32,6 @@ enum layers {
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-
     [_LAYER0] = LAYOUT_tkl_f13_ansi_tsangan(
         KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_MUTE,    KC_PSCR, KC_SLCK, KC_PAUS,
         KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC,    KC_INS,  KC_HOME, KC_PGUP,
@@ -35,3 +42,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
 };
+
+bool send_on_press(uint16_t send_code, keyrecord_t *record) {
+    if (record->event.pressed) {
+        tap_code16(send_code);
+        return 0; // false . handled - stop
+    }
+    return 1;
+}
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+	switch (keycode) {
+        case B_LT:
+            return send_on_press(KC_NUBS, record); // '<'
+        case B_GT:
+            return send_on_press(LSFT(KC_NUBS), record); // '>'
+	}
+    return 1; // true - process all other keycodes normally
+}

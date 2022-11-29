@@ -8,7 +8,7 @@
 #define VIAL_UNLOCK_COMBO_COLS { 0, 13 } /* Enter */
 
 /* Reduce firmare size (default: 4) */
-#define DYNAMIC_KEYMAP_LAYER_COUNT 2
+#define DYNAMIC_KEYMAP_LAYER_COUNT 3
 
 /* Reduce firmare size */
 #define VIAL_TAP_DANCE_ENTRIES 4
@@ -21,6 +21,9 @@
 #define NO_PRINT
 #endif
 
-#define NO_ACTION_MACRO
-#define NO_ACTION_FUNCTION
+//#define NO_ACTION_MACRO
+//#define NO_ACTION_FUNCTION
 
+#define VIAL_COMBO_ENTRIES 5
+
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD

@@ -3,6 +3,10 @@
     "vendorId": "0x4B42",
     "productId": "0x0011",
     "lighting": "qmk_rgblight",
+    "customKeycodes": [
+      {"name": "<", "title": "<", "shortName": "<"},
+      {"name": ">", "title": ">", "shortName": ">"}
+    ],
     "matrix": { "rows": 6, "cols": 16 },
     "layouts": {
       "keymap": [

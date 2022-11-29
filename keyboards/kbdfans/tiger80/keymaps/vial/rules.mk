@@ -14,12 +14,14 @@ AUTO_SHIFT_ENABLE = no
 VIALRGB_ENABLE = no
 DYNAMIC_MACRO_ENABLE = no
 
+CAPS_WORD_ENABLE = yes # Caps lock for a word at a time
 VIA_ENABLE = yes
 VIAL_ENABLE = yes
 LT0_ENABLE = yes
 TAP_DANCE_ENABLE = yes
 NKRO_ENABLE = yes           # Enable N-Key Rollover
 QMK_SETTINGS = yes
+COMBO_ENABLE = yes
 DEBOUNCE_TYPE = sym_defer_pr
 
 EXTRAFLAGS += -flto
