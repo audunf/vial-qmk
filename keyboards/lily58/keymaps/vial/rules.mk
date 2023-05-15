@@ -1,7 +1,6 @@
 VIA_ENABLE = yes
 VIAL_ENABLE = yes
-# AF: yes
-OLED_ENABLE = no
+OLED_ENABLE = yes
 OLED_DRIVER = SSD1306
 TAP_DANCE_ENABLE = yes
 EXTRAKEY_ENABLE = yes
@@ -37,7 +36,7 @@ BLUETOOTH_ENABLE = no       # Enable Bluetooth with the Adafruit EZ-Key HID
 SWAP_HANDS_ENABLE = no      # Enable one-hand typing
 
 # AF: was yes
-RGBLIGHT_ENABLE = no       # Enable WS2812 RGB underlight.
+RGBLIGHT_ENABLE = yes       # Enable WS2812 RGB underlight.
 ENCODER_ENABLE = yes
 
 # Do not enable SLEEP_LED_ENABLE. it uses the same timer as BACKLIGHT_ENABLE
