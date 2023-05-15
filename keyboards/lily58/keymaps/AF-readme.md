@@ -27,5 +27,14 @@ If it is more convenient, instead of plugging in the controller you can also tap
 qmk compile -e CONVERT_TO=promicro_rp2040 -kb splitkb/aurora/corne -km debug
 
 
+# Liatris & Elite-Pi
+qmk compile -e CONVERT_TO=promicro_rp2040 -kb splitkb/aurora/corne -km debug
+
+If you do not want to specify the converter every time, add the following to your keymap's "rules.mk" as this lets you use the same short command as the Elite-C.
+
+```
+# Convert from Elite-C to standard RP2040
+CONVERT_TO=promicro_rp2040
+```
 
 https://learn.adafruit.com/using-qmk-on-rp2040-microcontrollers?view=all
