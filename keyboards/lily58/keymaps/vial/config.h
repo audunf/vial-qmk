@@ -46,4 +46,29 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_FORCE_HOLD
 #define TAPPING_TERM 100
 
+/* AF: From the splitkb repo: https://github.com/splitkb/qmk_firmware/blob/lily58-splitkb/keyboards/lily58/keymaps/splitkb/config.h */
+#undef RGBLED_NUM
+#define RGBLIGHT_ANIMATIONS
+#define RGBLIGHT_LIMIT_VAL 120
+#define RGBLIGHT_HUE_STEP 10
+#define RGBLIGHT_SAT_STEP 17
+#define RGBLIGHT_VAL_STEP 17
 
+#undef RGB_DI_PIN
+#define RGB_DI_PIN D4
+#define RGBLED_SPLIT { 10, 10 }
+#define RGBLED_NUM 20
+
+#define ENCODERS_PAD_A { F4 }
+#define ENCODERS_PAD_B { F5 }
+#define ENCODERS_PAD_A_RIGHT { F5 }
+#define ENCODERS_PAD_B_RIGHT { F4 }
+
+// Uncomment this if you use an ALPS EC11K encoder, or are noticing missing encoder actuations
+// #define ENCODER_RESOLUTION 2
+
+// Underglow
+/*
+#define RGBLIGHT_ANIMATIONS
+#define RGBLIGHT_SLEEP
+*/
